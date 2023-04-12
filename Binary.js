@@ -56,7 +56,9 @@ class BinaryTree {
     }
     rootB() {
         console.log(this.root);
+        return this.root;
     }
+    
 }
 
 const tree = new BinaryTree();
