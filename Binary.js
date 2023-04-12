@@ -5,6 +5,7 @@ class TreeNode {
         this.right = undefined;
     }
     add (value) {
+        if(this.value === value) return;
         if(value < this.value) {
             this.addLeft(value);
         } else {
@@ -37,8 +38,25 @@ class BinaryTree {
         }
         this.root = new TreeNode(value);
     }
+    find(value) {
+        if (!this.root) return undefined;
+        let current = this.root;
+        while(true) {
+            if (current === undefined) return;
+            if(current.value === value) {
+                console.log("Found");
+                return current;
+            }
+            if (value < current.value) {
+                current = current.left   
+            } else {
+                current = current.right
+            }
+        }
+    }
 }
 
 const tree = new BinaryTree();
 tree.add(23);
+tree.find(23);
 console.log(tree);
