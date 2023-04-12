@@ -54,9 +54,12 @@ class BinaryTree {
             }
         }
     }
+    rootB() {
+        console.log(this.root);
+    }
 }
 
 const tree = new BinaryTree();
 tree.add(23);
 tree.find(23);
-console.log(tree);
+tree.rootB();
